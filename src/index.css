@@ -27,4 +27,15 @@ body {
 
 button {
   font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 클릭(마우스·터치) 시 파란 아웃라인 제거, 키보드 포커스는 유지 */
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
