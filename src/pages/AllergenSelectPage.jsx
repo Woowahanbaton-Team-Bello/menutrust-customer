@@ -47,7 +47,7 @@ export function AllergenSelectPage({ isSelected, toggle, count, onSubmit }) {
       <section className={styles.selection}>
         <h2 className={styles.selectionTitle}>알레르기를 선택해 주세요</h2>
         <p className={styles.selectionDesc}>
-          선택한 항목으로 메뉴를 가능·주의·제외로 나눠 보여드려요
+          선택한 항목으로 메뉴를 확정·혼입 가능·없음으로 나눠 보여드려요
         </p>
 
         <div className={styles.chips}>
