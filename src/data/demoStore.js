@@ -8,8 +8,6 @@ import { MENU_STATUS } from '../types/menu'
  */
 export const DEMO_STORE = {
   name: '우아타이',
-  // 손님이 이전 화면에서 선택한 알레르겐 (데모 값)
-  selectedAllergens: ['새우', '땅콩'],
 }
 
 /**

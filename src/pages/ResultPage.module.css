@@ -40,12 +40,14 @@
 .selectedBadge {
   margin-left: auto;
   padding: var(--space-2) var(--space-4);
+  border: none;
   border-radius: var(--radius-pill);
   background-color: var(--color-accent-bg);
   color: var(--color-accent);
   font-size: var(--fs-body);
   font-weight: var(--fw-bold);
   white-space: nowrap;
+  cursor: pointer;
 }
 
 /* Intro */

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { DEMO_MENUS, DEMO_STORE } from '../data/demoStore'
+import { DEMO_MENUS } from '../data/demoStore'
 import { STATUS_META, STATUS_ORDER } from '../types/menu'
 import { MenuCard } from '../components/menu/MenuCard'
 import styles from './ResultPage.module.css'
@@ -13,11 +13,13 @@ const ALL_TAB = 'all'
  * @param {string[]} [props.selectedAllergens] 손님이 선택한 알레르겐 라벨
  * @param {() => void} [props.onBack] 뒤로 가기
  * @param {(menuId: string) => void} [props.onSelectMenu] 메뉴 상세로 이동
+ * @param {() => void} [props.onEditConditions] 조건 변경으로 이동
  */
 export function ResultPage({
-  selectedAllergens = DEMO_STORE.selectedAllergens,
+  selectedAllergens = [],
   onBack,
   onSelectMenu,
+  onEditConditions,
 }) {
   const [activeTab, setActiveTab] = useState(ALL_TAB)
 
@@ -56,9 +58,13 @@ export function ResultPage({
           &lt;
         </button>
         <h1 className={styles.title}>결과</h1>
-        <span className={styles.selectedBadge}>
-          {selectedAllergens.join(' · ')}
-        </span>
+        <button
+          type="button"
+          className={styles.selectedBadge}
+          onClick={onEditConditions}
+        >
+          {selectedAllergens.length ? selectedAllergens.join(' · ') : '없음'}
+        </button>
       </header>
 
       <section className={styles.intro}>
