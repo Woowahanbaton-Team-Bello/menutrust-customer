@@ -1,0 +1,23 @@
+.chip {
+  appearance: none;
+  cursor: pointer;
+  padding: var(--space-3) var(--space-5);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--fs-chip);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.chip[data-selected='true'] {
+  background-color: var(--color-selected-bg);
+  border-color: var(--color-selected-bg);
+  color: var(--color-selected-text);
+}
