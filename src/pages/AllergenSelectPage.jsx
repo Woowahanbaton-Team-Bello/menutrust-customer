@@ -1,5 +1,4 @@
 import { ALLERGENS } from '../constants/allergens'
-import { useAllergenSelection } from '../hooks/useAllergenSelection'
 import { AllergenChip } from '../components/allergen/AllergenChip'
 import styles from './AllergenSelectPage.module.css'
 
@@ -9,8 +8,14 @@ const STORE = {
   tagline: '태국 음식 · QR 알레르기 메뉴',
 }
 
-export function AllergenSelectPage() {
-  const { isSelected, toggle, count } = useAllergenSelection()
+/**
+ * @param {Object} props
+ * @param {(id: string) => boolean} props.isSelected
+ * @param {(id: string) => void} props.toggle
+ * @param {number} props.count 선택 개수
+ * @param {() => void} [props.onSubmit] 메뉴 보기로 이동
+ */
+export function AllergenSelectPage({ isSelected, toggle, count, onSubmit }) {
 
   return (
     <main className={styles.page}>
@@ -57,7 +62,7 @@ export function AllergenSelectPage() {
         </div>
       </section>
 
-      <button type="button" className={styles.cta}>
+      <button type="button" className={styles.cta} onClick={onSubmit}>
         선택한 알레르기로 메뉴 보기
         {count > 0 && <span className={styles.ctaCount}>{count}</span>}
       </button>

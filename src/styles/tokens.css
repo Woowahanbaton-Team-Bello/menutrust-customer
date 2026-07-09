@@ -11,6 +11,15 @@
   --color-accent-bg: #e8f5ee;
   --color-selected-bg: #17201c;
   --color-selected-text: #ffffff;
+  --color-track: #ebefea;
+
+  /* 메뉴 상태별 색 (확정 / 혼입 가능 / 없음) */
+  --status-confirmed-bg: #fce8e7;
+  --status-confirmed-fg: #c43b36;
+  --status-cross-bg: #fff4d6;
+  --status-cross-fg: #a66400;
+  --status-none-bg: #e8f5ee;
+  --status-none-fg: #197a55;
 
   /* Typography */
   --font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;

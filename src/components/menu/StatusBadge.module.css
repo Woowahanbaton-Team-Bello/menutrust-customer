@@ -1,0 +1,24 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+}
+
+.badge[data-tone='confirmed'] {
+  background-color: var(--status-confirmed-bg);
+  color: var(--status-confirmed-fg);
+}
+
+.badge[data-tone='cross'] {
+  background-color: var(--status-cross-bg);
+  color: var(--status-cross-fg);
+}
+
+.badge[data-tone='none'] {
+  background-color: var(--status-none-bg);
+  color: var(--status-none-fg);
+}
