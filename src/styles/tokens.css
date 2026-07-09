@@ -12,6 +12,8 @@
   --color-selected-bg: #17201c;
   --color-selected-text: #ffffff;
   --color-track: #ebefea;
+  --color-ask-bg: #f1efe8;
+  --color-ask-fg: #315c4a;
 
   /* 메뉴 상태별 색 (확정 / 혼입 가능 / 없음) */
   --status-confirmed-bg: #fce8e7;

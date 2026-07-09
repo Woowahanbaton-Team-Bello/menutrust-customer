@@ -3,25 +3,29 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-4);
+  width: 100%;
   padding: var(--space-5);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-card);
   background-color: var(--color-surface);
+  text-align: left;
+  cursor: pointer;
 }
 
 .info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   min-width: 0;
 }
 
 .name {
-  margin: 0;
   font-size: var(--fs-notice-title);
   font-weight: var(--fw-black);
   color: var(--color-text);
 }
 
 .reason {
-  margin: var(--space-2) 0 0;
   font-size: var(--fs-body);
   font-weight: var(--fw-bold);
 }

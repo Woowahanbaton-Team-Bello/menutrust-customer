@@ -12,10 +12,12 @@ const ALL_TAB = 'all'
  * @param {Object} props
  * @param {string[]} [props.selectedAllergens] 손님이 선택한 알레르겐 라벨
  * @param {() => void} [props.onBack] 뒤로 가기
+ * @param {(menuId: string) => void} [props.onSelectMenu] 메뉴 상세로 이동
  */
 export function ResultPage({
   selectedAllergens = DEMO_STORE.selectedAllergens,
   onBack,
+  onSelectMenu,
 }) {
   const [activeTab, setActiveTab] = useState(ALL_TAB)
 
@@ -93,7 +95,11 @@ export function ResultPage({
 
       <section className={styles.list}>
         {visibleMenus.map((menu) => (
-          <MenuCard key={menu.id} menu={menu} />
+          <MenuCard
+            key={menu.id}
+            menu={menu}
+            onClick={() => onSelectMenu?.(menu.id)}
+          />
         ))}
       </section>
     </main>
