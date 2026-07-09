@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AllergenSelectPage } from './pages/AllergenSelectPage'
 import { ResultPage } from './pages/ResultPage'
 import { MenuDetailPage } from './pages/MenuDetailPage'
@@ -12,6 +12,11 @@ function App() {
   const [screen, setScreen] = useState('select')
   const [activeMenuId, setActiveMenuId] = useState(null)
   const selection = useAllergenSelection()
+
+  // 화면을 이동하면 스크롤을 최상단으로 되돌린다.
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [screen, activeMenuId])
 
   const selectedLabels = ALLERGENS.filter((a) => selection.isSelected(a.id)).map(
     (a) => a.label,
