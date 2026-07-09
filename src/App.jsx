@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { AllergenSelectPage } from './pages/AllergenSelectPage'
 import { ResultPage } from './pages/ResultPage'
 import { MenuDetailPage } from './pages/MenuDetailPage'
@@ -14,7 +14,8 @@ function App() {
   const selection = useAllergenSelection()
 
   // 화면을 이동하면 스크롤을 최상단으로 되돌린다.
-  useEffect(() => {
+  // 페인트 전에 실행되도록 useLayoutEffect 사용 (이전 위치가 잠깐 보이는 것 방지).
+  useLayoutEffect(() => {
     window.scrollTo(0, 0)
   }, [screen, activeMenuId])
 
