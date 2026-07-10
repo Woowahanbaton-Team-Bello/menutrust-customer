@@ -21,15 +21,14 @@ export function AllergenSelectPage({ isSelected, toggle, count, onSubmit }) {
     <main className={styles.page}>
       <header className={styles.header}>
         <div className={styles.brand}>
-          <span className={styles.mark}>M</span>
-          <span className={styles.wordmark}>MenuTrust</span>
+          <span className={styles.mark}>두</span>
+          <span className={styles.wordmark}>두입세입</span>
         </div>
         <span className={styles.badge}>사장님 확인</span>
       </header>
 
       <section className={styles.store}>
         <h1 className={styles.storeName}>{STORE.name}</h1>
-        <p className={styles.storeTagline}>{STORE.tagline}</p>
       </section>
 
       <section className={styles.notice}>
@@ -38,9 +37,6 @@ export function AllergenSelectPage({ isSelected, toggle, count, onSubmit }) {
         </span>
         <div>
           <p className={styles.noticeTitle}>매장에서 확인한 정보입니다</p>
-          <p className={styles.noticeDesc}>
-            주문 전 직원에게 한 번 더 확인해 주세요
-          </p>
         </div>
       </section>
 

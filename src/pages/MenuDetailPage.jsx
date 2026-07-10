@@ -50,7 +50,9 @@ export function MenuDetailPage({ menu, onBack }) {
               <li key={i} className={styles.evidenceRow}>
                 <StatusBadge status={item.status} />
                 <span className={styles.evidenceText}>
-                  {item.allergen} · {item.note}
+                  {item.note && item.note !== item.allergen
+                    ? `${item.allergen} · ${item.note}`
+                    : item.allergen}
                 </span>
               </li>
             ))}

@@ -1,7 +1,7 @@
 /* 디자인 토큰 — 색·간격·타이포·라운드 단일 소스 */
 :root {
   /* Color */
-  --color-bg: #f7f8f4;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-border: #dde3dc;
   --color-primary: #e85d55;
