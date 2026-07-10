@@ -32,9 +32,8 @@ export function MenuDetailPage({ menu, onBack }) {
 
       <section className={styles.menu}>
         <h2 className={styles.menuName}>{menu.name}</h2>
-        <p className={styles.menuMeta}>
-          {menu.desc} · {menu.price.toLocaleString('ko-KR')}원
-        </p>
+        <p className={styles.menuMeta}>{menu.desc}</p>
+        <p className={styles.menuPrice}>{menu.price.toLocaleString('ko-KR')}원</p>
       </section>
 
       <section className={styles.reason} data-tone={meta?.tone}>

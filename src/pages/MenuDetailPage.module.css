@@ -60,6 +60,12 @@
   font-weight: var(--fw-medium);
   color: var(--color-text-muted);
 }
+.menuPrice {
+  margin: var(--space-2) 0 0;
+  font-size: var(--fs-notice-title);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+}
 
 /* Reason (tinted by status) */
 .reason {
