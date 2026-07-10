@@ -4,7 +4,7 @@ import styles from './AllergenSelectPage.module.css'
 
 // 데모 매장 정보 (타이 음식점). 추후 매장 데이터로 대체.
 const STORE = {
-  name: '우아타이',
+  name: '타이87',
   tagline: '태국 음식 · QR 알레르기 메뉴',
 }
 

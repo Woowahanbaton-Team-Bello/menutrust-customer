@@ -64,7 +64,6 @@ function App() {
   const selectedLabels = ALLERGENS.filter((a) => selection.isSelected(a.id)).map(
     (a) => a.label,
   )
-  const storeName = data?.store?.name ?? '우아타이'
 
   const activeMenu =
     screen === 'detail' ? menus.find((m) => m.id === menuId) : null
@@ -75,7 +74,6 @@ function App() {
   if (screen === 'edit') {
     return (
       <EditAllergenPage
-        storeName={storeName}
         isSelected={selection.isSelected}
         toggle={selection.toggle}
         onBack={back}

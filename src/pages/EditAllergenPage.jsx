@@ -8,14 +8,12 @@ import styles from './EditAllergenPage.module.css'
  * 선택 상태는 App에서 관리하므로 변경은 즉시 결과에 반영된다.
  *
  * @param {Object} props
- * @param {string} props.storeName 매장 이름 (헤더 뱃지)
  * @param {(id: string) => boolean} props.isSelected
  * @param {(id: string) => void} props.toggle
  * @param {() => void} [props.onBack]
  * @param {() => void} [props.onApply] 이 조건으로 다시 보기
  */
 export function EditAllergenPage({
-  storeName,
   isSelected,
   toggle,
   onBack,
@@ -36,7 +34,6 @@ export function EditAllergenPage({
           &lt;
         </button>
         <h1 className={styles.title}>조건 변경</h1>
-        <span className={styles.storeBadge}>{storeName}</span>
       </header>
 
       <h2 className={styles.heading}>알레르기 조건을 바꿔볼까요?</h2>
