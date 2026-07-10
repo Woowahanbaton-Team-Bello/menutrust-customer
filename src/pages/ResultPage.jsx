@@ -1,9 +1,9 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { STATUS_META, STATUS_ORDER } from '../types/menu'
 import { MenuCard } from '../components/menu/MenuCard'
 import styles from './ResultPage.module.css'
 
-const ALL_TAB = 'all'
+export const ALL_TAB = 'all'
 
 /**
  * 결과 요약 + 메뉴 리스트 화면.
@@ -14,7 +14,8 @@ const ALL_TAB = 'all'
  * @param {Error | null} [props.error] 조회 실패
  * @param {string[]} [props.notice] 매장 공지
  * @param {string[]} [props.selectedAllergens] 손님이 선택한 알레르겐 라벨
- * @param {() => void} [props.onBack] 뒤로 가기
+ * @param {string} [props.activeTab] 선택된 탭 (App에서 관리해 화면 이동 후에도 유지)
+ * @param {(tab: string) => void} [props.onTabChange] 탭 변경
  * @param {(menuId: string) => void} [props.onSelectMenu] 메뉴 상세로 이동
  * @param {() => void} [props.onEditConditions] 조건 변경으로 이동
  */
@@ -24,11 +25,11 @@ export function ResultPage({
   error = null,
   notice = [],
   selectedAllergens = [],
-  onBack,
+  activeTab = ALL_TAB,
+  onTabChange,
   onSelectMenu,
   onEditConditions,
 }) {
-  const [activeTab, setActiveTab] = useState(ALL_TAB)
 
   // 상태별 개수 요약
   const counts = useMemo(() => {
@@ -56,14 +57,6 @@ export function ResultPage({
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <button
-          type="button"
-          className={styles.back}
-          onClick={onBack}
-          aria-label="뒤로"
-        >
-          &lt;
-        </button>
         <h1 className={styles.title}>결과</h1>
         <button
           type="button"
@@ -99,7 +92,7 @@ export function ResultPage({
             aria-selected={activeTab === tab.key}
             className={styles.tab}
             data-active={activeTab === tab.key}
-            onClick={() => setActiveTab(tab.key)}
+            onClick={() => onTabChange?.(tab.key)}
           >
             {tab.label}
           </button>

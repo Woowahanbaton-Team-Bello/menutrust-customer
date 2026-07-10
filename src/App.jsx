@@ -17,6 +17,8 @@ const INITIAL_NAV = { screen: 'select', menuId: null }
 function App() {
   const [nav, setNav] = useState(INITIAL_NAV)
   const { screen, menuId } = nav
+  // 결과 화면 탭 상태를 App에서 보관해 상세→뒤로가기 후에도 유지한다.
+  const [resultTab, setResultTab] = useState('all')
   const selection = useAllergenSelection()
 
   // 첫 진입 화면을 히스토리에 심고, 뒤로가기(popstate)를 화면 상태로 반영한다.
@@ -30,6 +32,11 @@ function App() {
   // 화면 전진: 히스토리에 항목을 쌓는다.
   const go = (next) => {
     window.history.pushState(next, '')
+    setNav(next)
+  }
+  // 현재 항목을 교체한다(스택에 쌓지 않음). 첫 화면을 스택에서 제거할 때 사용.
+  const replace = (next) => {
+    window.history.replaceState(next, '')
     setNav(next)
   }
   // 뒤로가기: 인앱 버튼도 히스토리를 통해 돌아가 상태를 일관되게 유지한다.
@@ -85,7 +92,8 @@ function App() {
         error={error}
         notice={data?.notice}
         selectedAllergens={selectedLabels}
-        onBack={back}
+        activeTab={resultTab}
+        onTabChange={setResultTab}
         onSelectMenu={(id) => go({ screen: 'detail', menuId: id })}
         onEditConditions={() => go({ screen: 'edit', menuId: null })}
       />
@@ -97,7 +105,7 @@ function App() {
       isSelected={selection.isSelected}
       toggle={selection.toggle}
       count={selection.count}
-      onSubmit={() => go({ screen: 'result', menuId: null })}
+      onSubmit={() => replace({ screen: 'result', menuId: null })}
     />
   )
 }
