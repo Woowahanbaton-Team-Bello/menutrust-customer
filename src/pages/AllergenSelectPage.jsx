@@ -24,7 +24,6 @@ export function AllergenSelectPage({ isSelected, toggle, count, onSubmit }) {
           <span className={styles.mark}>두</span>
           <span className={styles.wordmark}>두입세입</span>
         </div>
-        <span className={styles.badge}>사장님 확인</span>
       </header>
 
       <section className={styles.store}>
